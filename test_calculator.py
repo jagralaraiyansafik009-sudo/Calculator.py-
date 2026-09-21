@@ -1,29 +1,23 @@
-from Calculator import calculate_total 
+from Calculator import calculate_total
+from Calculator import calculate_average
+from Calculator import get_result
 
-from Calculator import calculate_average 
 
-from Calculator import get_result 
+def test_total():
+    marks = [80, 70, 90]
+    assert calculate_total(marks) == 240
 
-def test_total(): 
 
-    marks = [80, 70, 90] 
+def test_average():
+    marks = [80, 70, 90]
+    assert calculate_average(marks) == 80
 
-    assert calculate_total(marks) == 240 
 
-def test_average(): 
+def test_pass_result():
+    marks = [80, 70, 90]
+    assert get_result(marks) == "PASS"
 
-    marks = [80, 70, 90] 
 
-    assert calculate_average(marks) == 80 
-
-def test_pass_result(): 
-
-    marks = [80, 70, 90] 
-
-    assert get_result(marks) == "PASS" 
-
-def test_fail_result(): 
-
-    marks = [30, 35, 25] 
-
+def test_fail_result():
+    marks = [30, 35, 25]
     assert get_result(marks) == "FAIL"
